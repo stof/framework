@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+use Somos\Action;
+use Somos\Console\Command;
+use Somos\Console\Run;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$somos = Somos\Somos::start()
+    ->add(Action::get(new \Somos\Console\Command('hello:world'))->respondWith(function () { echo 'Hello World!'; }))
+    ->add(Action::get(new Command('test:test'))->respondWith(function () { var_dump('console'); }))
+    ->handle(new Run());

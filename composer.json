@@ -1,0 +1,27 @@
+{
+    "name" : "somos/framework",
+    "description": "A new PHP Framework whose goal it is to be as invisible to your application as it can be!",
+    "license": "MIT",
+    "keywords": ["framework", "ddd", "adr", "psr7", "messagebus", "somos"],
+    "homepage": "http://somos.github.io",
+    "authors": [
+        { "name": "Mike van Riel", "role": "lead" }
+    ],
+    "autoload": {
+        "psr-4": {"Somos\\": "src/"}
+    },
+    "require": {
+        "php":                    ">= 5.5.0",
+        "mnapoli/php-di":         "~4.4",
+        "simple-bus/message-bus": "~2.0",
+        "nikic/fast-route":       "0.3.*",
+        "phly/http":              "0.10.*",
+        "doctrine/orm":           "~2.4",
+        "symfony/console":        "~2.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5",
+        "squizlabs/php_codesniffer": "~2.2"
+    },
+    "bin": [ "bin/somos" ]
+}
