@@ -24,14 +24,14 @@ class RunHandler implements MessageHandler
     /**
      * Handles the given message.
      *
-     * @param Message $message
+     * @param Message|Run $message
      *
      * @return void
      */
     public function handle(Message $message)
     {
-        $this->console->setName('Somos');
-        $this->console->setVersion('1.0.0');
+        $this->console->setName($message->title);
+        $this->console->setVersion($message->version);
         foreach ($this->actions as $action) {
             if ($action->getMatcher() instanceof Command) {
                 $this->console->add($action->getMatcher());
