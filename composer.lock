@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dbd768ba09b697f4370b7c92889908fc",
+    "hash": "5db987ca03734e1679e591148a869c2f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -964,7 +964,7 @@
         },
         {
             "name": "simple-bus/message-bus",
-            "version": "v2.0.2",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SimpleBus/MessageBus.git",

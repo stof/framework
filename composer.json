@@ -13,7 +13,7 @@
     "require": {
         "php":                    ">= 5.5.0",
         "mnapoli/php-di":         "~4.4",
-        "simple-bus/message-bus": "~2.0",
+        "simple-bus/message-bus": "~1.0",
         "nikic/fast-route":       "0.3.*",
         "phly/http":              "0.10.*",
         "doctrine/orm":           "~2.4",
