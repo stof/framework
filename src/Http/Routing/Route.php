@@ -2,7 +2,7 @@
 
 namespace Somos\Http\Routing;
 
-class Route
+final class Route
 {
     const METHOD_GET    = 'GET';
     const METHOD_HEAD   = 'HEAD';

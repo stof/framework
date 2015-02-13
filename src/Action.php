@@ -2,7 +2,7 @@
 
 namespace Somos;
 
-class Action
+final class Action
 {
     private $matcher = '';
 

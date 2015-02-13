@@ -2,7 +2,7 @@
 
 namespace Somos;
 
-class Actions extends \ArrayObject
+final class Actions extends \ArrayObject
 {
     public function add($matcher, callable $action = null)
     {

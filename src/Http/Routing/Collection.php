@@ -2,7 +2,7 @@
 
 namespace Somos\Http\Routing;
 
-class Collection extends \ArrayObject
+final class Collection extends \ArrayObject
 {
     public function __construct()
     {

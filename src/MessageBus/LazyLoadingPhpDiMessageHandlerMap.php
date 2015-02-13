@@ -7,7 +7,7 @@ use DI\Container;
 use SimpleBus\Message\Handler\Map\Exception\NoHandlerForMessageName;
 use SimpleBus\Message\Handler\Map\MessageHandlerMap;
 
-class LazyLoadingPhpDiMessageHandlerMap implements MessageHandlerMap
+final class LazyLoadingPhpDiMessageHandlerMap implements MessageHandlerMap
 {
     public function __construct(Container $container)
     {

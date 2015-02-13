@@ -9,7 +9,7 @@ use Somos\Http\Routing\Collection;
 use SimpleBus\Message\Handler\MessageHandler;
 use SimpleBus\Message\Message;
 
-class HandleRequestHandler implements MessageHandler
+final class HandleRequestHandler implements MessageHandler
 {
     /** @var ServerRequest */
     private $request;

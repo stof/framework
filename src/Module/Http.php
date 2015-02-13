@@ -2,7 +2,9 @@
 
 namespace Somos\Module;
 
-class Http
+use Somos\Module as SomosModule;
+
+final class Http implements SomosModule
 {
     public function __invoke()
     {

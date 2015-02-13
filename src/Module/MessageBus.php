@@ -2,6 +2,7 @@
 
 namespace Somos\Module;
 
+use Somos\Module as SomosModule;
 use SimpleBus\Message\Bus\Middleware\FinishesHandlingMessageBeforeHandlingNext;
 use SimpleBus\Message\Bus\Middleware\MessageBusSupportingMiddleware;
 use SimpleBus\Message\Handler\DelegatesToMessageHandlerMiddleware;
@@ -12,7 +13,7 @@ use SimpleBus\Message\Name\ClassBasedNameResolver;
 use SimpleBus\Message\Name\MessageNameResolver;
 use Somos\MessageBus\LazyLoadingPhpDiMessageHandlerMap;
 
-class MessageBus
+final class MessageBus implements SomosModule
 {
     public function __invoke()
     {

@@ -2,7 +2,7 @@
 
 namespace Somos\Module\Orm;
 
-class DoctrineConfiguration
+final class DoctrineConfiguration
 {
     private $debug = false;
     private $connection = ['driver' => 'pdo_sqlite', 'path' => 'db.sqlite'];

@@ -49,7 +49,7 @@ use SimpleBus\Message\Message;
  * options are supported and what description they have (in this case it is just the option 'name').
  * On line 5 we have added a callback
  */
-class Somos
+final class Somos
 {
     /**
      * The message bus that deals with the commands that need to be executed by the kernel.

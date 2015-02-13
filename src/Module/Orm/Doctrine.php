@@ -4,8 +4,9 @@ namespace Somos\Module\Orm;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
+use Somos\Module;
 
-class Doctrine
+final class Doctrine implements Module
 {
     /** @var DoctrineConfiguration */
     private $configuration;

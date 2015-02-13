@@ -7,7 +7,7 @@ use SimpleBus\Message\Message;
 use Somos\Actions;
 use Symfony\Component\Console\Application;
 
-class RunHandler implements MessageHandler
+final class RunHandler implements MessageHandler
 {
     /** @var Application */
     private $console;
