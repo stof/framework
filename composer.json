@@ -23,5 +23,10 @@
         "phpunit/phpunit": "~4.5",
         "squizlabs/php_codesniffer": "~2.2"
     },
-    "bin": [ "bin/somos" ]
+    "bin": [ "bin/somos" ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
