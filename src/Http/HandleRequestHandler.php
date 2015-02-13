@@ -26,8 +26,8 @@ final class HandleRequestHandler implements MessageHandler
     public function handle(Message $message)
     {
         $actions = $this->actions;
-        $dispatcher = \FastRoute\simpleDispatcher(function(\FastRoute\RouteCollector $r) use ($actions) {
-            foreach($actions as $action) {
+        $dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) use ($actions) {
+            foreach ($actions as $action) {
                 if ($action->getMatcher() instanceof Route == false) {
                     continue;
                 }

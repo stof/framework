@@ -18,7 +18,7 @@ final class Collection extends \ArrayObject
     {
         $collection = new static();
 
-        foreach($routes as $route) {
+        foreach ($routes as $route) {
             $collection[] = $route;
         }
 

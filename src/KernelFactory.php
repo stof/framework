@@ -30,7 +30,9 @@ final class KernelFactory
         $builder = new ContainerBuilder();
 
         $builder->addDefinitions(new ArrayDefinitionSource([
-            Actions::class => \Di\factory(function () { return new Actions(); })
+            Actions::class => \Di\factory(function () {
+                return new Actions();
+            })
         ]));
 
         $this->addModules($modules, $builder);
