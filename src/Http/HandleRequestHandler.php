@@ -58,7 +58,6 @@ final class HandleRequestHandler implements MessageHandler
                 throw new \Exception(
                     'No action could be found to deal with uri "' . $uri . '" and method "' . $method . '"'
                 );
-                break;
             case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
                 $allowedMethods = $routeInfo[1];
                 // TODO: Use a more specialized exception
@@ -66,7 +65,6 @@ final class HandleRequestHandler implements MessageHandler
                     'The method "' . $method . '" is not allowed with uri "' . $uri . '". The following are allowed '
                     . 'methods: ' . implode($allowedMethods)
                 );
-                break;
             case \FastRoute\Dispatcher::FOUND:
                 list(,$handler, $vars) = $routeInfo;
                 $handler($vars);
