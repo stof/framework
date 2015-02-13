@@ -26,18 +26,29 @@ final class RunHandler implements MessageHandler
      *
      * @param Message|Run $message
      *
+     * @throws \InvalidArgumentException if the given object is not of class Run.
+     *
      * @return void
      */
     public function handle(Message $message)
     {
+        if ($message instanceof Run === false) {
+            throw new \InvalidArgumentException(
+                'The handler responsible for the Console\'s Run message expects a message of class Somos\Console\Run, '
+                . 'an object of class "' . get_class($message) . '" was received'
+            );
+        }
+
         $this->console->setName($message->title);
         $this->console->setVersion($message->version);
+
         foreach ($this->actions as $action) {
             if ($action->getMatcher() instanceof Command) {
                 $this->console->add($action->getMatcher());
                 $action->getMatcher()->registerAction(array($action, 'handle'));
             }
         }
+
         $this->console->run();
     }
 }

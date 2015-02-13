@@ -9,6 +9,9 @@ use SimpleBus\Message\Handler\Map\MessageHandlerMap;
 
 final class LazyLoadingPhpDiMessageHandlerMap implements MessageHandlerMap
 {
+    /** @var Container */
+    private $container;
+
     public function __construct(Container $container)
     {
         $this->container = $container;
