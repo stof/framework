@@ -47,15 +47,25 @@ final class HandleRequestHandler implements MessageHandler
             }
         });
 
-        $routeInfo = $dispatcher->dispatch($this->request->getMethod(), (string)$this->request->getUri()->getPath());
+        $uri    = (string)$this->request->getUri()->getPath();
+        $method = $this->request->getMethod();
+
+        $routeInfo = $dispatcher->dispatch($method, $uri);
 
         switch ($routeInfo[0]) {
             case \FastRoute\Dispatcher::NOT_FOUND:
-                var_dump('test1');
+                // TODO: Use a more specialized exception
+                throw new \Exception(
+                    'No action could be found to deal with uri "' . $uri . '" and method "' . $method . '"'
+                );
                 break;
             case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
                 $allowedMethods = $routeInfo[1];
-                var_dump('test2');
+                // TODO: Use a more specialized exception
+                throw new \Exception(
+                    'The method "' . $method . '" is not allowed with uri "' . $uri . '". The following are allowed '
+                    . 'methods: ' . implode($allowedMethods)
+                );
                 break;
             case \FastRoute\Dispatcher::FOUND:
                 list(,$handler, $vars) = $routeInfo;
