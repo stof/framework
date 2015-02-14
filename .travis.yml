@@ -6,7 +6,7 @@ php:
   - hhvm-nightly
 
 script:
- - bin/phpunit
+ - /vendor/bin/phpunit
 
 before_script:
  - composer selfupdate --quiet
