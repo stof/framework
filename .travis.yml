@@ -1,0 +1,17 @@
+language: php
+php:
+  - 5.5
+  - 5.6
+  - hhvm
+  - hhvm-nightly
+
+script:
+ - bin/phpunit
+
+before_script:
+ - composer selfupdate --quiet
+ - composer install --no-interaction --prefer-source --dev
+
+notifications:
+  email:
+    - me@mikevanriel.com
