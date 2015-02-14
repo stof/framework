@@ -7,6 +7,15 @@ use Somos\Console\Run;
 require __DIR__ . '/../vendor/autoload.php';
 
 $somos = Somos\Somos::start()
-    ->add(Action::get(new \Somos\Console\Command('hello:world'))->respondWith(function () { echo 'Hello World!'; }))
-    ->add(Action::get(new Command('test:test'))->respondWith(function () { var_dump('console'); }))
+    ->add(
+        Action::get(
+            new Command('init|init:fullstack', 'Initializes a new project using Somos as a full-stack web framework')
+        )->respondWith(
+            function () {
+                echo 'The initialize command has not been implemented yet as we are currently working on setting up '
+                    . 'this project, please see https://github.com/somos/framework/issues/24 for more information on '
+                    . 'this item.' . PHP_EOL . PHP_EOL;
+            }
+        )
+    )
     ->handle(new Run());

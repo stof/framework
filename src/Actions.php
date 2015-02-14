@@ -4,12 +4,14 @@ namespace Somos;
 
 final class Actions extends \ArrayObject
 {
-    public function add($matcher, callable $action = null)
+    public function offsetSet($index, $newval)
     {
-        $action = new Action($matcher, $action);
+        if ($newval instanceof Action == false) {
+            throw new \InvalidArgumentException(
+                'Only actions may be added to the Actions collection, received: ' . get_class($newval)
+            );
+        }
 
-        $this[] = $action;
-
-        return $action;
+        parent::offsetSet($index, $newval);
     }
 }
